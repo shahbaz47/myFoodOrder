@@ -56,10 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="index.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="register.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restaurants.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
   <ItemGroup>

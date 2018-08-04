@@ -2405,8 +2405,8 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F020009
 			public const int btn_login = 2130837513;
 			
-			// aapt resource value: 0x7F020016
-			public const int btn_reg = 2130837526;
+			// aapt resource value: 0x7F020017
+			public const int btn_reg = 2130837527;
 			
 			// aapt resource value: 0x7F020004
 			public const int btn_tw = 2130837508;
@@ -2465,17 +2465,20 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
 			
+			// aapt resource value: 0x7F020016
+			public const int ed_age = 2130837526;
+			
+			// aapt resource value: 0x7F020006
+			public const int ed_email = 2130837510;
+			
+			// aapt resource value: 0x7F020014
+			public const int ed_fName = 2130837524;
+			
 			// aapt resource value: 0x7F020015
-			public const int ed_email = 2130837525;
+			public const int ed_phNo = 2130837525;
 			
 			// aapt resource value: 0x7F020008
 			public const int ed_pwd = 2130837512;
-			
-			// aapt resource value: 0x7F020014
-			public const int ed_uName = 2130837524;
-			
-			// aapt resource value: 0x7F020006
-			public const int ed_usr = 2130837510;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int end = 2131492909;
@@ -2771,11 +2774,11 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C008B
 			public const int transition_transform = 2131493003;
 			
-			// aapt resource value: 0x7F020012
-			public const int txtUser = 2130837522;
-			
 			// aapt resource value: 0x7F020013
 			public const int txtRegister = 2130837523;
+			
+			// aapt resource value: 0x7F020012
+			public const int txtUser = 2130837522;
 			
 			// aapt resource value: 0x7F020011
 			public const int txt_forgot = 2130837521;

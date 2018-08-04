@@ -2988,7 +2988,7 @@ containing a value of this type.
         public static final int bottom=0x7f08003d;
         public static final int btn_fb=0x7f08008c;
         public static final int btn_login=0x7f080092;
-        public static final int btn_reg=0x7f0800ba;
+        public static final int btn_reg=0x7f0800bb;
         public static final int btn_tw=0x7f08008d;
         public static final int buttonPanel=0x7f080063;
         public static final int cancel_action=0x7f0800a8;
@@ -3013,10 +3013,11 @@ containing a value of this type.
         public static final int design_menu_item_text=0x7f08009f;
         public static final int design_navigation_view=0x7f08009e;
         public static final int disableHome=0x7f080020;
-        public static final int ed_email=0x7f0800b9;
+        public static final int ed_age=0x7f0800ba;
+        public static final int ed_email=0x7f08008f;
+        public static final int ed_fName=0x7f0800b8;
+        public static final int ed_phNo=0x7f0800b9;
         public static final int ed_pwd=0x7f080091;
-        public static final int ed_uName=0x7f0800b8;
-        public static final int ed_usr=0x7f08008f;
         public static final int edit_query=0x7f08007e;
         public static final int end=0x7f080030;
         public static final int end_padder=0x7f0800b6;
@@ -3049,9 +3050,9 @@ containing a value of this type.
         public static final int listMode=0x7f08001d;
         public static final int list_item=0x7f080061;
         public static final int logo=0x7f08008b;
-        public static final int masked=0x7f0800bd;
+        public static final int masked=0x7f0800be;
         public static final int media_actions=0x7f0800aa;
-        public static final int message=0x7f0800bb;
+        public static final int message=0x7f0800bc;
         public static final int middle=0x7f080031;
         public static final int mini=0x7f080053;
         public static final int multiply=0x7f080028;
@@ -3138,7 +3139,7 @@ containing a value of this type.
         public static final int up=0x7f080009;
         public static final int useLogo=0x7f080026;
         public static final int view_offset_helper=0x7f080016;
-        public static final int visible=0x7f0800bc;
+        public static final int visible=0x7f0800bd;
         public static final int withText=0x7f08003c;
         public static final int wrap_content=0x7f08002e;
     }

@@ -1,11 +1,10 @@
-C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.csproj.CoreCompileInputs.cache
-C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.csprojAssemblyReference.cache
-C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.dll
-C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.pdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\bin\Debug\myFoodOrder.dll
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\bin\Debug\myFoodOrder.pdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\bin\Debug\myFoodOrder.myFoodOrder.apk
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\bin\Debug\myFoodOrder.myFoodOrder-Signed.apk
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.csproj.CoreCompileInputs.cache
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.dll
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.pdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\android\bin\myFoodOrder.myFoodOrder.apk
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\layout\activity_main.xml
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\values\colors.xml
@@ -64,6 +63,7 @@ C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\linksrc\System.Run
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\linksrc\System.ServiceModel.Internals.pdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\linksrc\Mono.Security.pdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\linksrc\myFoodOrder.dll.mdb
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\myFoodOrder.csprojAssemblyReference.cache
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\bin\Debug\myFoodOrder.dll.mdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\android\assets\myFoodOrder.dll.mdb
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\android\assets\Mono.Android.pdb

@@ -2450,8 +2450,8 @@ namespace myFoodOrder
 			// aapt resource value: 0x7f080092
 			public const int btn_login = 2131230866;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int btn_reg = 2131230906;
+			// aapt resource value: 0x7f0800bb
+			public const int btn_reg = 2131230907;
 			
 			// aapt resource value: 0x7f08008d
 			public const int btn_tw = 2131230861;
@@ -2525,17 +2525,20 @@ namespace myFoodOrder
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
+			// aapt resource value: 0x7f0800ba
+			public const int ed_age = 2131230906;
+			
+			// aapt resource value: 0x7f08008f
+			public const int ed_email = 2131230863;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int ed_fName = 2131230904;
+			
 			// aapt resource value: 0x7f0800b9
-			public const int ed_email = 2131230905;
+			public const int ed_phNo = 2131230905;
 			
 			// aapt resource value: 0x7f080091
 			public const int ed_pwd = 2131230865;
-			
-			// aapt resource value: 0x7f0800b8
-			public const int ed_uName = 2131230904;
-			
-			// aapt resource value: 0x7f08008f
-			public const int ed_usr = 2131230863;
 			
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
@@ -2633,14 +2636,14 @@ namespace myFoodOrder
 			// aapt resource value: 0x7f08008b
 			public const int logo = 2131230859;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int masked = 2131230909;
+			// aapt resource value: 0x7f0800be
+			public const int masked = 2131230910;
 			
 			// aapt resource value: 0x7f0800aa
 			public const int media_actions = 2131230890;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int message = 2131230907;
+			// aapt resource value: 0x7f0800bc
+			public const int message = 2131230908;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2900,8 +2903,8 @@ namespace myFoodOrder
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int visible = 2131230908;
+			// aapt resource value: 0x7f0800bd
+			public const int visible = 2131230909;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

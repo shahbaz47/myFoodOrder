@@ -2,7 +2,11 @@
 
 public class UserModel : RealmObject
 {
-    public string userName { get; set; }
-    public string email { get; set; }
+    
+    [PrimaryKey] public string email { get; set; }
+    public string fullName { get; set; }
     public string pswd { get; set; }
+    public string phNo { get; set; }
+    public string age { get; set; }
+
 }

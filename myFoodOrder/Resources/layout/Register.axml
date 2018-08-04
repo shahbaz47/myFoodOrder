@@ -16,13 +16,13 @@
         android:textColor="#DF3629"
         android:layout_marginTop="12dp" />
     <EditText
-        android:id="@+id/ed_uName"
+        android:id="@+id/ed_fName"
         android:layout_width="210dp"
         android:layout_height="30dp"
         android:textColor="#969696"
         android:hint="User Name"
         android:textSize="15dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="15dp"
         android:background="#E5E7E8"
         android:layout_below="@id/txtRegister" />
     <EditText
@@ -34,7 +34,7 @@
         android:textSize="15dp"
         android:layout_marginTop="7dp"
         android:background="#E5E7E8"
-        android:layout_below="@id/ed_uName" />
+        android:layout_below="@id/ed_fName" />
     <EditText
         android:id="@+id/ed_pwd"
         android:layout_width="210dp"
@@ -45,6 +45,26 @@
         android:layout_marginTop="7dp"
         android:background="#E5E7E8"
         android:layout_below="@id/ed_email" />
+    <EditText
+        android:id="@+id/ed_phNo"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:textColor="#969696"
+        android:hint="Phone No"
+        android:textSize="15dp"
+        android:layout_marginTop="7dp"
+        android:background="#E5E7E8"
+        android:layout_below="@id/ed_pwd" />
+    <EditText
+        android:id="@+id/ed_age"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:textColor="#969696"
+        android:hint="Age"
+        android:textSize="15dp"
+        android:layout_marginTop="7dp"
+        android:background="#E5E7E8"
+        android:layout_below="@id/ed_phNo" />
     <Button
         android:id="@+id/btn_reg"
         android:layout_width="210dp"
@@ -53,6 +73,6 @@
         android:text="Register"
         android:textColor="#FFF5FF"
         android:textAllCaps="false"
-        android:layout_below="@id/ed_pwd"
+        android:layout_below="@id/ed_age"
         android:layout_marginTop="50dp" />
 </RelativeLayout>

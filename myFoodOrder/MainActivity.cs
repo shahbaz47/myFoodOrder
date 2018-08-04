@@ -6,27 +6,29 @@ using Android.Content;
 using Realms;
 using System;
 using Android.Content.Res;
+using System.Linq;
 
 namespace myFoodOrder
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        EditText userName, pwd;
+        EditText email, pwd;
         TextView reg;
         Button btLogin;
         Realm myDB;
+        RealmConfiguration config = new RealmConfiguration() { SchemaVersion = 1 };
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            userName = FindViewById<EditText>(Resource.Id.ed_usr);
+            email = FindViewById<EditText>(Resource.Id.ed_email);
             pwd = FindViewById<EditText>(Resource.Id.ed_pwd);
             btLogin = FindViewById<Button>(Resource.Id.btn_login);
             reg = FindViewById<TextView>(Resource.Id.txt_register);
 
-            myDB = Realm.GetInstance();
+            myDB = Realm.GetInstance(config);
 
             reg.Click += regClicked;
             btLogin.Click += LoginClicked;
@@ -40,12 +42,14 @@ namespace myFoodOrder
         {
             Realm myDBobj;
             var flag = 0;
-            myDBobj = Realm.GetInstance();
+            myDBobj = Realm.GetInstance(config);
+            
+
             var myUserList = myDBobj.All<UserModel>();
 
             foreach (var myObj in myUserList)
             {
-                if (userName.Text == myObj.userName && pwd.Text == myObj.pswd)
+                if (email.Text == myObj.email && pwd.Text == myObj.pswd)
                 {
                     flag = 1;
                     break;
@@ -56,7 +60,7 @@ namespace myFoodOrder
                 Toast.MakeText(this, "Authentication Successful..", ToastLength.Short).Show();
 
                 Intent indexIntent = new Intent(this, typeof(index));
-                indexIntent.PutExtra("userName", userName.Text);
+                indexIntent.PutExtra("email", email.Text);
                 StartActivity(indexIntent);
             }
             else

@@ -15,9 +15,11 @@ namespace myFoodOrder
     [Activity(Label = "register")]
     public class register : Activity
     {
-        EditText uName, email, pwd;
+        EditText email, pwd, fName, phNo, age;
         Button btReg;
         Realm myDB;
+        RealmConfiguration config = new RealmConfiguration() { SchemaVersion = 1 };
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,27 +27,33 @@ namespace myFoodOrder
 
             email = FindViewById<EditText>(Resource.Id.ed_email);
             pwd = FindViewById<EditText>(Resource.Id.ed_pwd);
-            uName = FindViewById<EditText>(Resource.Id.ed_uName);
+            fName = FindViewById<EditText>(Resource.Id.ed_fName);
+            phNo = FindViewById<EditText>(Resource.Id.ed_phNo);
+            age = FindViewById<EditText>(Resource.Id.ed_age);
             btReg = FindViewById<Button>(Resource.Id.btn_reg);
-            
-            myDB = Realm.GetInstance();
+
+            myDB = Realm.GetInstance(config);
 
             btReg.Click += regClicked;
         }
         private void regClicked(object sender, System.EventArgs e)
         {
-            var unameValue = uName.Text;
+            var nameValue = fName.Text;
             var emailValue = email.Text;
+            var ageValue = age.Text;
+            var phoneValue = phNo.Text;
             var pwdValue = pwd.Text;
 
-            if (emailValue != "" && pwdValue != "" && unameValue != "")
+            if (emailValue != "" && pwdValue != "" && nameValue != "" && ageValue != "" && phoneValue != "")
             {
                 Toast.MakeText(this, "Successfully Registered..", ToastLength.Short).Show();
 
                 var myUserModel = new UserModel();
-                myUserModel.userName = unameValue;
+                myUserModel.fullName = nameValue;
                 myUserModel.pswd = pwdValue;
                 myUserModel.email = emailValue;
+                myUserModel.age = ageValue;
+                myUserModel.phNo = phoneValue;
                 myDB.Write(() =>
                 {
                     myDB.Add(myUserModel);

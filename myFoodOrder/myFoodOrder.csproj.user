@@ -4,5 +4,6 @@
     <SelectedDevice>android_accelerated_x86_oreo_1</SelectedDevice>
     <DefaultDevice>android_accelerated_x86_oreo_1</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

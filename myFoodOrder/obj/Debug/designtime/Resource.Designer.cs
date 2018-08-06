@@ -2236,6 +2236,12 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F010003
 			public const int btn_tw = 2130771971;
 			
+			// aapt resource value: 0x7F010004
+			public const int cart = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int chipotle = 2130771973;
+			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
 			
@@ -2254,14 +2260,20 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F010004
-			public const int im_pwd = 2130771972;
-			
-			// aapt resource value: 0x7F010005
-			public const int im_usr = 2130771973;
-			
 			// aapt resource value: 0x7F010006
-			public const int logo = 2130771974;
+			public const int im_pwd = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int im_usr = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int kfc = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int logo = 2130771977;
+			
+			// aapt resource value: 0x7F010010
+			public const int mcd = 2130771984;
 			
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
@@ -2301,6 +2313,9 @@ namespace myFoodOrder
 			
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
+			
+			// aapt resource value: 0x7F010011
+			public const int subway = 2130771985;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
@@ -2384,6 +2399,9 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C0015
 			public const int add = 2131492885;
 			
+			// aapt resource value: 0x7F020020
+			public const int age = 2130837536;
+			
 			// aapt resource value: 0x7F0C0016
 			public const int alertTitle = 2131492886;
 			
@@ -2399,14 +2417,20 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C001A
 			public const int bottom = 2131492890;
 			
+			// aapt resource value: 0x7F020014
+			public const int btnAddHotel = 2130837524;
+			
+			// aapt resource value: 0x7F020024
+			public const int btnUpdate = 2130837540;
+			
 			// aapt resource value: 0x7F020003
 			public const int btn_fb = 2130837507;
 			
 			// aapt resource value: 0x7F020009
 			public const int btn_login = 2130837513;
 			
-			// aapt resource value: 0x7F020017
-			public const int btn_reg = 2130837527;
+			// aapt resource value: 0x7F020030
+			public const int btn_reg = 2130837552;
 			
 			// aapt resource value: 0x7F020004
 			public const int btn_tw = 2130837508;
@@ -2465,20 +2489,29 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
 			
-			// aapt resource value: 0x7F020016
-			public const int ed_age = 2130837526;
+			// aapt resource value: 0x7F020013
+			public const int edtAddress = 2130837523;
+			
+			// aapt resource value: 0x7F020012
+			public const int edtHotelName = 2130837522;
+			
+			// aapt resource value: 0x7F020029
+			public const int ed_age = 2130837545;
 			
 			// aapt resource value: 0x7F020006
 			public const int ed_email = 2130837510;
 			
-			// aapt resource value: 0x7F020014
-			public const int ed_fName = 2130837524;
+			// aapt resource value: 0x7F020027
+			public const int ed_fName = 2130837543;
 			
-			// aapt resource value: 0x7F020015
-			public const int ed_phNo = 2130837525;
+			// aapt resource value: 0x7F020028
+			public const int ed_phNo = 2130837544;
 			
 			// aapt resource value: 0x7F020008
 			public const int ed_pwd = 2130837512;
+			
+			// aapt resource value: 0x7F020018
+			public const int email = 2130837528;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int end = 2131492909;
@@ -2498,8 +2531,14 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
 			
+			// aapt resource value: 0x7F020016
+			public const int fName = 2130837526;
+			
 			// aapt resource value: 0x7F0C0009
 			public const int forever = 2131492873;
+			
+			// aapt resource value: 0x7F020015
+			public const int fragmentContainer = 2130837525;
 			
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
@@ -2567,6 +2606,9 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
 			
+			// aapt resource value: 0x7F020031
+			public const int myTabTitle = 2130837553;
+			
 			// aapt resource value: 0x7F0C0047
 			public const int navigation_header_container = 2131492935;
 			
@@ -2594,6 +2636,9 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C004F
 			public const int parent_matrix = 2131492943;
 			
+			// aapt resource value: 0x7F020022
+			public const int phNo = 2130837538;
+			
 			// aapt resource value: 0x7F0C0050
 			public const int pin = 2131492944;
 			
@@ -2605,6 +2650,9 @@ namespace myFoodOrder
 			
 			// aapt resource value: 0x7F0C0053
 			public const int radio = 2131492947;
+			
+			// aapt resource value: 0x7F020025
+			public const int restId = 2130837541;
 			
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
@@ -2774,11 +2822,20 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0C008B
 			public const int transition_transform = 2131493003;
 			
-			// aapt resource value: 0x7F020013
-			public const int txtRegister = 2130837523;
+			// aapt resource value: 0x7F020021
+			public const int txtAge = 2130837537;
 			
-			// aapt resource value: 0x7F020012
-			public const int txtUser = 2130837522;
+			// aapt resource value: 0x7F020019
+			public const int txtEmail = 2130837529;
+			
+			// aapt resource value: 0x7F020017
+			public const int txtFname = 2130837527;
+			
+			// aapt resource value: 0x7F020023
+			public const int txtPhone = 2130837539;
+			
+			// aapt resource value: 0x7F020026
+			public const int txtRegister = 2130837542;
 			
 			// aapt resource value: 0x7F020011
 			public const int txt_forgot = 2130837521;
@@ -2938,6 +2995,9 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F030002
 			public const int activity_main = 2130903042;
 			
+			// aapt resource value: 0x7F030003
+			public const int AddRestaurant = 2130903043;
+			
 			// aapt resource value: 0x7F0F001B
 			public const int design_bottom_navigation_item = 2131689499;
 			
@@ -2980,8 +3040,14 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0F0028
 			public const int design_text_input_password_icon = 2131689512;
 			
-			// aapt resource value: 0x7F030003
-			public const int index = 2130903043;
+			// aapt resource value: 0x7F030004
+			public const int index = 2130903044;
+			
+			// aapt resource value: 0x7F030005
+			public const int MyProfile = 2130903045;
+			
+			// aapt resource value: 0x7F030006
+			public const int MyRest = 2130903046;
 			
 			// aapt resource value: 0x7F0F0001
 			public const int notification_action = 2131689473;
@@ -3028,8 +3094,8 @@ namespace myFoodOrder
 			// aapt resource value: 0x7F0F0006
 			public const int notification_template_part_time = 2131689478;
 			
-			// aapt resource value: 0x7F030004
-			public const int Register = 2130903044;
+			// aapt resource value: 0x7F030007
+			public const int Register = 2130903047;
 			
 			// aapt resource value: 0x7F0F0038
 			public const int select_dialog_item_material = 2131689528;
@@ -3042,6 +3108,9 @@ namespace myFoodOrder
 			
 			// aapt resource value: 0x7F0F003B
 			public const int support_simple_spinner_dropdown_item = 2131689531;
+			
+			// aapt resource value: 0x7F030008
+			public const int TabLayout = 2130903048;
 			
 			// aapt resource value: 0x7F0F003C
 			public const int tooltip = 2131689532;

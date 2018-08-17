@@ -24,6 +24,13 @@ public class MyProfile
 			mono.android.TypeManager.Activate ("myFoodOrder.MyProfile, myFoodOrder", "", this, new java.lang.Object[] {  });
 	}
 
+	public MyProfile (android.app.Activity p0, java.lang.String p1)
+	{
+		super ();
+		if (getClass () == MyProfile.class)
+			mono.android.TypeManager.Activate ("myFoodOrder.MyProfile, myFoodOrder", "Android.App.Activity, Mono.Android:System.String, mscorlib", this, new java.lang.Object[] { p0, p1 });
+	}
+
 
 	public void onCreate (android.os.Bundle p0)
 	{

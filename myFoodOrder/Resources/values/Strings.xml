@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">myFoodOrder</string>
     <string name="action_settings">Settings</string>
+    <string name="menuItem1">Home</string>
+    <string name="menuItem2">My Cart</string>
+    <string name="menuItem3">Add Restaurant</string>
+    <string name="menuItem4">Add Item</string>
+    <string name="menuItem5">Log out</string>
 </resources>

@@ -42,6 +42,7 @@
         android:textColor="#969696"
         android:hint="Password"
         android:textSize="15dp"
+        android:inputType="textPassword"
         android:layout_marginTop="7dp"
         android:background="#E5E7E8"
         android:layout_below="@id/ed_email" />

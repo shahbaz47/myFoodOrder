@@ -92,6 +92,6 @@
         android:textColor="#FFF5FF"
         android:textAllCaps="false"
         android:layout_below="@id/phNo"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp" />
 </RelativeLayout>

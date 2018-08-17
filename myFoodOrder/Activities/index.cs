@@ -12,30 +12,28 @@ using Android.Widget;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "index", MainLauncher = true)]
+    [Activity(Label = "index")]
     public class index : Activity
     {
-       // TextView email;
-        Realm myDBobj;
+      
+        string myEmail;
         RealmConfiguration config = new RealmConfiguration() { SchemaVersion = 1 };
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
-           // String user = Intent.GetStringExtra("email");
+            myEmail = Intent.GetStringExtra("email");
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
+
             RequestWindowFeature(WindowFeatures.ActionBar);
-            //enable navigation mode to support tab layout
+
             this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-            AddMyTab("Restaurants", new MyRest());
-            AddMyTab("My Profile", new MyProfile());
-
-
-            // Set our view from the "main" layout resource
+            AddMyTab("Restaurants", new MyRest(this, myEmail));
+            AddMyTab("My Profile", new MyProfile(this, myEmail));
+            
             SetContentView(Resource.Layout.index);
-            //email = FindViewById<TextView>(Resource.Id.txtUser);
+            /* email = FindViewById<TextView>(Resource.Id.txtUser);
 
-           /* myDBobj = Realm.GetInstance(config);
+            myDBobj = Realm.GetInstance(config);
             var myUserList = from a in myDBobj.All<UserModel>() where (a.email == user) select a;
 
             foreach (var u in myUserList)
@@ -51,15 +49,71 @@ namespace myFoodOrder
             tab.SetCustomView(Resource.Layout.TabLayout);
             tab.CustomView.FindViewById<TextView>(Resource.Id.myTabTitle).Text = tabTitle;
             
-
-            // must set event handler for replacing tabs
             tab.TabSelected += delegate (object sender, ActionBar.TabEventArgs e) 
             {
-
                 e.FragmentTransaction.Replace(Resource.Id.fragmentContainer, fragment);
             };
 
             this.ActionBar.AddTab(tab);
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            // set the menu layout on Main Activity  
+            MenuInflater.Inflate(Resource.Menu.mainMenu, menu);
+            IMenuItem myCrt = menu.FindItem(Resource.Id.menuItem2);
+            IMenuItem addRest = menu.FindItem(Resource.Id.menuItem3);
+            IMenuItem addItem = menu.FindItem(Resource.Id.menuItem4);
+            if (myEmail == "admin")
+            {
+                addRest.SetVisible(true);
+                addItem.SetVisible(true);
+                myCrt.SetVisible(false);
+            }
+            else
+            {
+                addRest.SetVisible(false);
+                addItem.SetVisible(false);
+                myCrt.SetVisible(true);
+            }
+            
+            
+            return base.OnCreateOptionsMenu(menu);
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {                
+                case Resource.Id.menuItem2:
+                    {
+                        Intent CartIntent = new Intent(this, typeof(CartView));
+                        CartIntent.PutExtra("email", myEmail);
+                        StartActivity(CartIntent);
+                        return true;
+                    }
+                case Resource.Id.menuItem3:
+                    {
+                        Intent restIntent = new Intent(this, typeof(AddRestaurant));
+                        restIntent.PutExtra("email", myEmail);
+                        StartActivity(restIntent);
+                        return true;
+                    }
+                case Resource.Id.menuItem4:
+                    {
+                        Intent ItemIntent = new Intent(this, typeof(AddItem));
+                        ItemIntent.PutExtra("email", myEmail);
+                        StartActivity(ItemIntent);
+                        return true;
+                    }
+                case Resource.Id.menuItem5:
+                    {
+                        Toast.MakeText(this, "Successfully Logged Out..", ToastLength.Short).Show();
+                        Intent mainIntent = new Intent(this, typeof(MainActivity));
+                        StartActivity(mainIntent);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
     }
 }

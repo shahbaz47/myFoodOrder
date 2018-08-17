@@ -55,11 +55,22 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\AddItem.cs" />
+    <Compile Include="Activities\AddRestaurant.cs" />
+    <Compile Include="Activities\CartList.cs" />
     <Compile Include="Activities\index.cs" />
+    <Compile Include="Activities\ItemDesc.cs" />
+    <Compile Include="Activities\ItemList.cs" />
+    <Compile Include="Activities\ItemView.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\register.cs" />
     <Compile Include="Activities\MyProfile.cs" />
     <Compile Include="Activities\MyRest.cs" />
+    <Compile Include="Activities\RestaurantList.cs" />
+    <Compile Include="DataModel\CartModel.cs" />
+    <Compile Include="DataModel\HotelModel.cs" />
+    <Compile Include="DataModel\ItemModel.cs" />
+    <Compile Include="Activities\CartView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataModel\UserModel.cs" />
@@ -130,7 +141,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
     <AndroidResource Include="Resources\layout\TabLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -145,6 +155,45 @@
     <AndroidResource Include="Resources\drawable\mcd.png" />
     <AndroidResource Include="Resources\drawable\subway.png" />
     <AndroidResource Include="Resources\drawable\cart.png" />
+    <AndroidResource Include="Resources\layout\AddRestaurant.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <AndroidResource Include="Resources\layout\RestaurantList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemDesc.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CartList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CartView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Menu\mainMenu.xml" />
+    <AndroidResource Include="Resources\drawable\taco.jpg" />
+    <AndroidResource Include="Resources\drawable\burger.jpg" />
+    <AndroidResource Include="Resources\drawable\burrito.png" />
+    <AndroidResource Include="Resources\drawable\friedchicken.png" />
+    <AndroidResource Include="Resources\drawable\pizza.png" />
+    <AndroidResource Include="Resources\drawable\pizzapizza.png" />
+    <AndroidResource Include="Resources\drawable\ricebowl.png" />
+    <AndroidResource Include="Resources\drawable\sub.png" />
+    <AndroidResource Include="Resources\drawable\tacobell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

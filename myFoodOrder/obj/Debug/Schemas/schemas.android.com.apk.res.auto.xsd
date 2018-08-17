@@ -2,7 +2,7 @@
 <xs:schema xmlns:app="http://schemas.android.com/apk/res-auto" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res-auto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v26</xs:documentation>
-    <xs:documentation>06-08-2018 02:57:36 AM</xs:documentation>
+    <xs:documentation>10-08-2018 10:29:25 PM</xs:documentation>
   </xs:annotation>
   <xs:attribute name="allowStacking">
     <xs:annotation>
@@ -1032,6 +1032,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -4153,6 +4156,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -11859,6 +11865,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -15169,6 +15178,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -15260,6 +15272,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -16310,6 +16325,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -16928,6 +16946,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />
@@ -18535,6 +18556,9 @@
             <xs:enumeration value="@string/appbar_scrolling_view_behavior" />
             <xs:enumeration value="@string/bottom_sheet_behavior" />
             <xs:enumeration value="@string/character_counter_pattern" />
+            <xs:enumeration value="@string/menuItem1" />
+            <xs:enumeration value="@string/menuItem2" />
+            <xs:enumeration value="@string/menuItem3" />
             <xs:enumeration value="@string/password_toggle_content_description" />
             <xs:enumeration value="@string/path_password_eye" />
             <xs:enumeration value="@string/path_password_eye_mask_strike_through" />

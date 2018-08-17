@@ -54,11 +54,17 @@ namespace myFoodOrder
                     flag = 1;
                     break;
                 }
+                else if (email.Text == "admin" && pwd.Text == "admin")
+                {
+                    flag = 1;
+                    break;
+                }
+
             }
             if (flag == 1)
             {
                 Toast.MakeText(this, "Authentication Successful..", ToastLength.Short).Show();
-
+                var idDetail = from a in myDB.All<UserModel>() where (a.email == email.Text) select a;
                 Intent indexIntent = new Intent(this, typeof(index));
                 indexIntent.PutExtra("email", email.Text);
                 StartActivity(indexIntent);

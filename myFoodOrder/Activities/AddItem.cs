@@ -14,7 +14,7 @@ using Realms;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "AddItem")]
+    [Activity(Label = "Add Items")]
     public class AddItem : Activity
     {
         EditText edtItemName, edtPrice, edtDesc;
@@ -108,7 +108,10 @@ namespace myFoodOrder
                     {
                         myDB.Add(objItemModel);
                     });
-                    Toast.MakeText(this, "" + "Item Added", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Item Added", ToastLength.Short).Show();
+                    Intent ItemIntent = new Intent(this, typeof(AddItem));
+                    ItemIntent.PutExtra("email", myEmail);
+                    StartActivity(ItemIntent);
                 }
             };
         }
@@ -135,7 +138,7 @@ namespace myFoodOrder
             alert.SetMessage(msg);
             alert.SetPositiveButton("ok", (senderAiert, args) =>
             {
-                //Toast.MakeText(this, "Empty", ToastLength.Long).Show();
+                
             });
             Dialog dialog = alert.Create();
             dialog.Show();
@@ -167,6 +170,13 @@ namespace myFoodOrder
         {
             switch (item.ItemId)
             {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

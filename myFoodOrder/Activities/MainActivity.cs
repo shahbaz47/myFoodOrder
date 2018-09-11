@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "Login", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
     {
         EditText email, pwd;
@@ -40,12 +40,12 @@ namespace myFoodOrder
         }
         private void LoginClicked(object sender, System.EventArgs e)
         {
-            Realm myDBobj;
+            Realm myDb;
             var flag = 0;
-            myDBobj = Realm.GetInstance(config);
+            myDb = Realm.GetInstance(config);
             
 
-            var myUserList = myDBobj.All<UserModel>();
+            var myUserList = myDb.All<UserModel>();
 
             foreach (var myObj in myUserList)
             {
@@ -64,14 +64,21 @@ namespace myFoodOrder
             if (flag == 1)
             {
                 Toast.MakeText(this, "Authentication Successful..", ToastLength.Short).Show();
-                var idDetail = from a in myDB.All<UserModel>() where (a.email == email.Text) select a;
                 Intent indexIntent = new Intent(this, typeof(index));
                 indexIntent.PutExtra("email", email.Text);
                 StartActivity(indexIntent);
             }
             else
             {
-                Toast.MakeText(this, "Wrong login credentials..", ToastLength.Short).Show();
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Error");
+                alert.SetMessage("Invalid Email or Password");
+                alert.SetPositiveButton("OK", (senderAlert, args) =>
+                {
+                    Toast.MakeText(this, "Wrong login credentials", ToastLength.Short).Show();
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
             }
         }
     }

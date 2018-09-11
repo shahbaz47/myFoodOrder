@@ -15,7 +15,7 @@ using Realms;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "ItemView")]
+    [Activity(Label = "Menu")]
     public class ItemView : Activity
     {
         ListView myListView;
@@ -36,8 +36,7 @@ namespace myFoodOrder
 
             myListView = FindViewById<ListView>(Resource.Id.itemListId);
             mySearchBar = FindViewById<SearchView>(Resource.Id.searchId);
-
-            //var myListAll = myDb.All<ItemModel>();
+            
             var myListAll = from a in myDb.All<ItemModel>() where (a.hotelId == hId) select a;
 
             foreach (var myObj in myListAll)
@@ -49,6 +48,10 @@ namespace myFoodOrder
 
             myListView.Adapter = myOwnAdapter;
             myListView.ItemClick += myListViewClick;
+            if(myEmail=="admin")
+            {
+                myListView.ItemLongClick += myListViewLongClick;
+            }            
             mySearchBar.QueryTextChange += mySearchBarMethod;
 
         }
@@ -60,11 +63,32 @@ namespace myFoodOrder
             itIntent.PutExtra("email", myEmail);
             StartActivity(itIntent);
         }
+        public void myListViewLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            var value = myList[e.Position];
+            Android.App.AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.SetTitle("Delete");
+            alert.SetMessage("This will delete selected item from Restaurant. Do you want to continue?");
+            alert.SetPositiveButton("Yes", (senderAlert, args) =>
+            {
+                var del = myDb.All<ItemModel>().First(b => b.id == value.id);
+                using (var trans = myDb.BeginWrite())
+                {
+                    myDb.Remove(del);
+                    trans.Commit();
+                    Toast.MakeText(this, "Delete Successful", ToastLength.Short).Show();
+                }
+
+                Intent i = new Intent(this, typeof(index));
+                i.PutExtra("email", myEmail);
+                StartActivity(i);
+            });
+            Dialog dialog = alert.Create();
+            dialog.Show();
+        }
         public void mySearchBarMethod(object sender, SearchView.QueryTextChangeEventArgs e)
         {
             var searchedText = e.NewText;
-            System.Console.WriteLine("SearchText \n" + searchedText);
-
 
             var searchedArray = myFilterMethod(searchedText);
 
@@ -84,11 +108,9 @@ namespace myFoodOrder
 
                 if (item.Contains(searchedText.ToLower()))
                 {
-
                     filterArray.Add(itemModel);
                 }
             }
-
             return filterArray;
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -118,6 +140,13 @@ namespace myFoodOrder
         {
             switch (item.ItemId)
             {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

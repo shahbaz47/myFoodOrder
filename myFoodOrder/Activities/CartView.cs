@@ -13,7 +13,7 @@ using Realms;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "CartView")]
+    [Activity(Label = "My Cart")]
     public class CartView : Activity
     {
         ListView myListView;
@@ -23,6 +23,7 @@ namespace myFoodOrder
         RealmConfiguration config = new RealmConfiguration() { SchemaVersion = 1 };
         List<CartModel> myList = new List<CartModel>();
         String myEmail;
+        Button btnOrder;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,6 +34,7 @@ namespace myFoodOrder
             myDb = Realm.GetInstance(config);
 
             myListView = FindViewById<ListView>(Resource.Id.cartListId);
+            btnOrder = FindViewById<Button>(Resource.Id.btnOrder);
             var myListAll = from a in myDb.All<CartModel>() where (a.userId == myEmail) select a;
 
             foreach (var myObj in myListAll)
@@ -45,19 +47,35 @@ namespace myFoodOrder
                 }
                 totalPrice = totalPrice + (itemPrice * myObj.qty);                
             }
-
             CartList myOwnAdapter = new CartList(this, myList);
             myListView.ItemClick += myListViewClick;
             myListView.Adapter = myOwnAdapter;
             FindViewById<TextView>(Resource.Id.txtTotal).Text += totalPrice.ToString();
+            btnOrder.Click += orderClicked;
 
+        }
+        private void orderClicked(object sender, System.EventArgs e)
+        {
+            var myListAll = from a in myDb.All<CartModel>() where (a.userId == myEmail) select a;
+            foreach (var d in myListAll)
+            {
+                using (var trans = myDb.BeginWrite())
+                {
+                    myDb.Remove(d);
+                    trans.Commit();
+                }
+            }
+               
+            Intent i = new Intent(this, typeof(order));
+            i.PutExtra("email", myEmail);
+            StartActivity(i);
         }
         public void myListViewClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var value = myList[e.Position];
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle("Delete");
-            alert.SetMessage("This will delete selected item from you Cart. Do you want to delete it?");
+            alert.SetMessage("This will delete selected item from you Cart. Do you want to continue?");
             alert.SetPositiveButton("Yes", (senderAlert, args) =>
             {
                 var del = myDb.All<CartModel>().First(b => b.id == value.id);
@@ -65,7 +83,7 @@ namespace myFoodOrder
                 {
                     myDb.Remove(del);
                     trans.Commit();
-                    Toast.MakeText(this, "Delete Successful..", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Delete Successful", ToastLength.Short).Show();
                 }
                 Intent CartIntent = new Intent(this, typeof(CartView));
                 CartIntent.PutExtra("email", myEmail);
@@ -73,8 +91,6 @@ namespace myFoodOrder
             });
             Dialog dialog = alert.Create();
             dialog.Show();
-
-
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -103,6 +119,13 @@ namespace myFoodOrder
         {
             switch (item.ItemId)
             {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

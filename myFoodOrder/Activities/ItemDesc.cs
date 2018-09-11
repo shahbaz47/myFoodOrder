@@ -13,12 +13,12 @@ using Realms;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "ItemDesc")]
+    [Activity(Label = "Item Description")]
     public class ItemDesc : Activity
     {
         ImageView imgItem;
         TextView txtItemName, txtPrice, txtDesc;
-        EditText edtQty;
+        EditText edtQty, edtAdd;
         Button btnAddCart;
         Realm myDB;
         string msg;
@@ -38,11 +38,13 @@ namespace myFoodOrder
             txtPrice = FindViewById<TextView>(Resource.Id.txtPrice);
             txtDesc = FindViewById<TextView>(Resource.Id.txtDesc);
             edtQty = FindViewById<EditText>(Resource.Id.edtQty);
+            edtAdd = FindViewById<EditText>(Resource.Id.edtAdd);
             btnAddCart = FindViewById<Button>(Resource.Id.btnAddToCart);
             if (myEmail == "admin")
             {
                 btnAddCart.Visibility = ViewStates.Invisible;
                 edtQty.Visibility = ViewStates.Invisible;
+                edtAdd.Visibility = ViewStates.Invisible;
             }
             int itemId = Convert.ToInt32(Intent.GetStringExtra("itemId"));
             var itemDetail = from a in myDB.All<ItemModel>() where (a.id == itemId) select a;
@@ -67,15 +69,13 @@ namespace myFoodOrder
 
                 if (edtQty.Text == "")
                 {
-                    msg = "Please enter Description";
+                    msg = "Please enter Quantity";
                     Alert(msg);
                 }
                 else
                 {
                     CartModel objCartModel = new CartModel();
-
                     int count = myDB.All<CartModel>().Count();
-
                     //increatement index
                     int nextID = count + 1;
 
@@ -86,12 +86,14 @@ namespace myFoodOrder
                     objCartModel.hotelId = hotelId;
                     objCartModel.userId = myEmail;
 
-
                     myDB.Write(() =>
                     {
                         myDB.Add(objCartModel);
                     });
                     Toast.MakeText(this, "" + "Added to Cart Successfully", ToastLength.Short).Show();
+                    Intent CartIntent = new Intent(this, typeof(CartView));
+                    CartIntent.PutExtra("email", myEmail);
+                    StartActivity(CartIntent);
                 }
             };
         }
@@ -135,6 +137,13 @@ namespace myFoodOrder
         {
             switch (item.ItemId)
             {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

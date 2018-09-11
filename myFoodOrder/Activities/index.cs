@@ -9,17 +9,19 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Text;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "index")]
+    [Activity(Label = "My Food Order")]
     public class index : Activity
     {
-      
+        Realm myDb;
+        string fullName;
         string myEmail;
         RealmConfiguration config = new RealmConfiguration() { SchemaVersion = 1 };
         protected override void OnCreate(Bundle savedInstanceState)
-        {
+        {       
 
             myEmail = Intent.GetStringExtra("email");
             base.OnCreate(savedInstanceState);
@@ -29,18 +31,29 @@ namespace myFoodOrder
             this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             AddMyTab("Restaurants", new MyRest(this, myEmail));
             AddMyTab("My Profile", new MyProfile(this, myEmail));
-            
             SetContentView(Resource.Layout.index);
-            /* email = FindViewById<TextView>(Resource.Id.txtUser);
-
-            myDBobj = Realm.GetInstance(config);
-            var myUserList = from a in myDBobj.All<UserModel>() where (a.email == user) select a;
-
+            myDb = Realm.GetInstance(config);
+            var myUserList = from a in myDb.All<UserModel>() where (a.email == myEmail) select a;
             foreach (var u in myUserList)
             {
-                email.Text += "Welcome " + u.fullName + " !";
-            }*/
+                fullName = u.fullName;
+            }
+        }
 
+        public override void OnAttachedToWindow()
+        {
+            base.OnAttachedToWindow();
+            if (myEmail != "admin")
+            {
+                if(fullName.Contains(" "))
+                    fullName = fullName.Split(' ')[0];
+                Window.SetTitle("Welcome " + fullName);
+            }
+            else
+            {
+                Window.SetTitle("Welcome Administrator");
+            }
+                
         }
         void AddMyTab(string tabTitle, Fragment fragment)
         {
@@ -82,7 +95,14 @@ namespace myFoodOrder
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
-            {                
+            {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

@@ -57,7 +57,7 @@ namespace myFoodOrder
                 itemPrice = d.price;
                 imgRes = (int)typeof(Resource.Drawable).GetField(d.itemImg).GetValue(null);
             }
-            
+
             myView.FindViewById<TextView>(Resource.Id.nameId).Text = itemNm;
             myView.FindViewById<TextView>(Resource.Id.txtQty).Text = "Quantity : " + objCartModel.qty.ToString();
             myView.FindViewById<TextView>(Resource.Id.txtPrice).Text = "$" + (itemPrice * objCartModel.qty).ToString();
@@ -65,5 +65,7 @@ namespace myFoodOrder
 
             return myView;
         }
+
+        
     }
 }

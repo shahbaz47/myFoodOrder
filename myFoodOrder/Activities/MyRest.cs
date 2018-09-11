@@ -42,8 +42,7 @@ namespace myFoodOrder
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
             View view = inflater.Inflate(Resource.Layout.MyRest, container, false);
            
-            myList.Clear();
-            
+            myList.Clear();            
 
             myDb = Realm.GetInstance(config);
 
@@ -62,7 +61,10 @@ namespace myFoodOrder
             mySearchBar.QueryTextChange += mySearchBarMethod;
 
             myListView.ItemClick += myListViewClick;
-
+            if (myEmail == "admin")
+            {
+                myListView.ItemLongClick += myListViewLongClick;
+            }
             return view;
         }
         public void mySearchBarMethod(object sender, SearchView.QueryTextChangeEventArgs e)
@@ -79,11 +81,30 @@ namespace myFoodOrder
             Intent itIntent = new Intent(this.Context, typeof(ItemView));
             itIntent.PutExtra("hotelId", value.id.ToString());
             itIntent.PutExtra("email", myEmail);
-            Toast.MakeText(this.Context, "Hotel ID" + value.id.ToString(), ToastLength.Long).Show();
             StartActivity(itIntent);
         }
-
-
+        public void myListViewLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            var value = myList[e.Position];
+            Android.App.AlertDialog.Builder alert = new AlertDialog.Builder(this.Context);
+            alert.SetTitle("Delete");
+            alert.SetMessage("This will delete selected item from Restaurant. Do you want to continue?");
+            alert.SetPositiveButton("Yes", (senderAlert, args) =>
+            {
+                var del = myDb.All<HotelModel>().First(b => b.id == value.id);
+                using (var trans = myDb.BeginWrite())
+                {
+                    myDb.Remove(del);
+                    trans.Commit();
+                    Toast.MakeText(this.Context, "Delete Successful", ToastLength.Short).Show();
+                }
+                Intent i = new Intent(this.Context, typeof(index));
+                i.PutExtra("email", myEmail);
+                StartActivity(i);
+            });
+            Dialog dialog = alert.Create();
+            dialog.Show();
+        }
         public List<HotelModel> myFilterMethod(string searchedText)
         {
             var filterArray = new List<HotelModel>();

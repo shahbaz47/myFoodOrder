@@ -12,7 +12,7 @@ using Realms;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "register")]
+    [Activity(Label = "Register")]
     public class register : Activity
     {
         EditText email, pwd, fName, phNo, age;
@@ -45,9 +45,7 @@ namespace myFoodOrder
             var pwdValue = pwd.Text;
 
             if (emailValue != "" && pwdValue != "" && nameValue != "" && ageValue != "" && phoneValue != "")
-            {
-                Toast.MakeText(this, "Successfully Registered..", ToastLength.Short).Show();
-
+            {         
                 var myUserModel = new UserModel();
                 myUserModel.fullName = nameValue;
                 myUserModel.pswd = pwdValue;
@@ -58,6 +56,7 @@ namespace myFoodOrder
                 {
                     myDB.Add(myUserModel);
                 });
+                Toast.MakeText(this, "Successfully Registered..", ToastLength.Short).Show();
                 Intent mainIntent = new Intent(this, typeof(MainActivity));
                 StartActivity(mainIntent);
             }
@@ -65,10 +64,10 @@ namespace myFoodOrder
             {
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                 alert.SetTitle("Error");
-                alert.SetMessage("Please Enter all fields..");
+                alert.SetMessage("Please Enter all fields");
                 alert.SetPositiveButton("OK", (senderAlert, args) =>
                 {
-                    Toast.MakeText(this, "Insuffecient data..", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Insuffecient data", ToastLength.Short).Show();
                 });
                 Dialog dialog = alert.Create();
                 dialog.Show();

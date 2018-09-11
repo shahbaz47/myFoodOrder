@@ -23,7 +23,7 @@ namespace myFoodOrder
         public MyProfile(Activity context, string emailId)
         {
            myContext = context;
-            myEmail = emailId;
+           myEmail = emailId;
         }
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -68,7 +68,7 @@ namespace myFoodOrder
                              myUserList.age = txtAge.Text;
                              myUserList.phNo = txtPhone.Text;
                          });
-                         Toast.MakeText(this.Context, "SuccessFully Updated !", ToastLength.Short).Show();
+                         Toast.MakeText(this.Context, "Successfully Updated !", ToastLength.Short).Show();
                      }
                      else
                      {

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace myFoodOrder
 {
-    [Activity(Label = "AddRestaurant")]
+    [Activity(Label = "Add Restaurants")]
     public class AddRestaurant : Activity
     {
         EditText edtHotelName, edtAddress;
@@ -71,7 +71,10 @@ namespace myFoodOrder
                     {
                         myDB.Add(objHotelModel);
                     });
-                    Toast.MakeText(this, "" + "Hotel Added !", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Hotel Added !", ToastLength.Short).Show();
+                    Intent restIntent = new Intent(this, typeof(AddRestaurant));
+                    restIntent.PutExtra("email", myEmail);
+                    StartActivity(restIntent);
                 }
 
 
@@ -123,6 +126,13 @@ namespace myFoodOrder
         {
             switch (item.ItemId)
             {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(index));
+                        i.PutExtra("email", myEmail);
+                        StartActivity(i);
+                        return true;
+                    }
                 case Resource.Id.menuItem2:
                     {
                         Intent CartIntent = new Intent(this, typeof(CartView));

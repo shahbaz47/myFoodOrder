@@ -62,6 +62,9 @@ C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\pizza
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\ricebowl.png
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\sub.png
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\tacobell.png
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\layout\order.xml
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\check.png
+C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\res\drawable\user.png
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\R.cs.flag
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\R.txt
 C:\Users\shbz4\source\repos\myFoodOrder\myFoodOrder\obj\Debug\uploadflags.txt
